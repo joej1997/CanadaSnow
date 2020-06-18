@@ -7,13 +7,7 @@ importAllStationdata<-function(fileLoc){
   SnowDataUpdated<-SnowDataUpdated$V1
   l<-lapply(SnowDataUpdated, processStationinfo)
   l<-do.call(rbind,l)
-  l<-as.data.frame(l)
-  colnames(l)<-c("ID","Name","Lat","Lon","Elev","Sdate","Edate","Nobs")
-  l$Lat<-as.numeric(l$Lat)
-  l$Lon<-as.numeric(l$Lon)
-  l$Elev<-as.numeric(l$Elev)
-  l$Nobs<-as.numeric(l$Nobs)
-  l
+  data.frame(ID=l[,1],Name=l[,2],Lat=as.numeric(l[,3]),Lon=as.numeric(l[,4]),Elev=as.numeric(l[,5]),Sdate=as.numeric(l[,6]),Edate=as.numeric(l[,7]),Nobs=as.numeric(l[,8]))
 }
 
 processStationinfo<-function(curstr){
