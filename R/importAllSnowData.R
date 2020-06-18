@@ -5,6 +5,8 @@
 importAllSnowdata<-function(fileLoc){
   monthlymat<-matrix("",nrow = 31,ncol = 7)
   monthlymat[,4]=as.character(1:31)
+  SnowDataUpdated <- read.delim(fileLoc, header=FALSE, stringsAsFactors=FALSE)
+  SnowDataUpdated<-SnowDataUpdated$V1
   l<-lapply(SnowDataUpdated, processStationdata)
   l<-do.call(rbind,l)
   data.frame(ID=l[,1],Year=as.numeric(l[,2]),Month=as.numeric(l[,3]),Day=as.numeric(l[,4]),SnowDepth=as.numeric(l[,5]),QC=l[,6],CA=l[,7])
