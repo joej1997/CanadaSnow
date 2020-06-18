@@ -7,12 +7,7 @@ importAllSnowdata<-function(fileLoc){
   monthlymat[,4]=as.character(1:31)
   l<-lapply(SnowDataUpdated, processStationdata)
   l<-do.call(rbind,l)
-  l<-as.data.frame(l)
-  colnames(l)<-c("ID","Year","Month","Day","SnowDepth","QC","CA")
-  l$Year<-as.numeric(l$Year)
-  l$Month<-as.numeric(l$Month)
-  l$Day<-as.numeric(l$Day)
-  l$SnowDepth<-as.numeric(l$SnowDepth)
+  data.frame(ID=l[,1],Year=as.numeric(l[,2]),Month=as.numeric(l[,3]),Day=as.numeric(l[,4]),SnowDepth=as.numeric(l[,5]),QC=l[,6],CA=l[,7])
 }
 
 processStationdata<-function(curstr){
