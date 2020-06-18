@@ -16,7 +16,7 @@ importAllSnowdata<-function(fileLoc){
 }
 
 processStationdata<-function(curstr){
-  if(str_length(curstr)!=77){
+  if(stringr::str_length(curstr)!=77){
     monthlymat[,1]=.Internal(substr(curstr,1L,7L))
     monthlymat[,2]=.Internal(substr(curstr,9L,12L))
     monthlymat[,3]=.Internal(substr(curstr,13L,14L))

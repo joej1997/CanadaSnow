@@ -17,7 +17,7 @@ importAllStationdata<-function(fileLoc){
 }
 
 processStationinfo<-function(curstr){
-  if(str_length(curstr)==77){
+  if(stringr::str_length(curstr)==77){
     id=.Internal(substr(curstr,1L,7L))
     Name=.Internal(substr(curstr,9L,38L))
     Lat=.Internal(substr(curstr,40L,45L))
