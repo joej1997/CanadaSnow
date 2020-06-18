@@ -2,6 +2,7 @@
 #' @param fileLoc File path to .dly data
 #' @return nicely organized dataframe of snow data
 #' @export
+library(stringr)
 importAllStationdata<-function(fileLoc){
   SnowDataUpdated <- read.delim(fileLoc, header=FALSE, stringsAsFactors=FALSE)
   SnowDataUpdated<-SnowDataUpdated$V1
