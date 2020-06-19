@@ -10,7 +10,7 @@ importAllStationdata(fileLoc)
 \item{fileLoc}{File path to .dly data}
 }
 \value{
-nicely organized dataframe of snow data
+nicely organized dataframe of snow data. ID is station ID, Name is station name, Lat is station latitude, Lon is station longitude, Elev is station elevation, Sdate is start date of observations (YYYYMM), Edate is end date of observations (YYYYMM), Nobs is number of observations
 }
 \description{
 Import Canadian snow station information data from .dly file

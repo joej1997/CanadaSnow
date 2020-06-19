@@ -1,6 +1,6 @@
 #' Import Canadian snow station information data from .dly file
 #' @param fileLoc File path to .dly data
-#' @return nicely organized dataframe of snow data
+#' @return nicely organized dataframe of snow data. ID is station ID, Name is station name, Lat is station latitude, Lon is station longitude, Elev is station elevation, Sdate is start date of observations (YYYYMM), Edate is end date of observations (YYYYMM), Nobs is number of observations
 #' @export
 importAllStationdata<-function(fileLoc){
   SnowDataUpdated <- read.delim(fileLoc, header=FALSE, stringsAsFactors=FALSE)
